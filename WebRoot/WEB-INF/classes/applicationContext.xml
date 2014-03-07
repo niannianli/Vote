@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	" default-autowire="byType">
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+	
+	<!-- 用户操作 -->
+	<bean id="usersDao" class="demo._impl.UsersDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="usersBiz" class="demo._impl.UsersBizImpl">
+		<property name="usersDao" ref="usersDao"></property>
+	</bean>
+	<bean id="usersAction" class="demo.action.UsersAction">
+		<property name="usersBiz" ref="usersBiz"></property>
+	</bean>
+	
+	<!-- 投票操作 -->
+	<bean id="voteDao" class="demo._impl.VoteDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="voteBiz" class="demo._impl.VoteBizImpl">
+		<property name="voteDao" ref="voteDao"></property>
+	</bean>
+	<bean id="voteAction" class="demo.action.VoteAction">
+		<property name="voteBiz" ref="voteBiz"></property>
+	</bean>
+	
+	
+	<!-- 选项操作 -->
+	<bean id="itemDao" class="demo._impl.ItemDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="itemBiz" class="demo._impl.ItemBizImpl">
+		<property name="itemDao" ref="itemDao"></property>
+	</bean>
+	<bean id="itemAction" class="demo.action.ItemAction">
+		<property name="itemBiz" ref="itemBiz"></property>
+	</bean>
+	
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<tx:advice id="transactionAdvice">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED"/>
+			<tx:method name="merge*" propagation="REQUIRED"/>
+			<tx:method name="delete*" propagation="REQUIRED"/>
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<tx:method name="*" propagation="SUPPORTS" read-only="true"/>
+ 		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config proxy-target-class="true">
+		<aop:pointcut expression="execution(* BizImpl.*.*(..))" id="transactionPointcut"/>
+		<aop:advisor advice-ref="transactionAdvice" pointcut-ref="transactionPointcut"/>
+	</aop:config>
+</beans>
