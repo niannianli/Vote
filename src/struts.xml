@@ -6,8 +6,8 @@
 	<constant name="struts.i18n.encoding" value="gb18030" />
 	<constant name="struts.ui.theme" value="simple" />
 	<package name="default" namespace="/" extends="struts-default">
-	<!-- 账户操作部分 -->
-	  <!-- 老师学生功能部分 -->
+	<!-- account operations -->
+	  <!-- teacher student actions -->
 		<action name="login" class="usersAction" method="login">
      		<result name="success">/jsp/main.jsp</result>
      		<result name="input">/jsp/login.jsp</result>
