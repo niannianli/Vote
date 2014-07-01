@@ -5,6 +5,7 @@
 	<constant name="struts.devMode" value="false" />
 	<constant name="struts.i18n.encoding" value="gb18030" />
 	<constant name="struts.ui.theme" value="simple" />
+	
 	<package name="default" namespace="/" extends="struts-default">
 	<!-- account operations -->
 	  <!-- teacher student actions -->
@@ -22,7 +23,7 @@
      		<result name="success">/jsp/personinfo/info.jsp</result>
      	</action>
      	
-     	<!-- 管理员功能部分 -->
+     	<!-- administrator action -->
      	<action name="queryuser" class="usersAction" method="queryuser">
      		<result name="success">/jsp/user/queryuser.jsp</result>
      	</action>
@@ -31,7 +32,7 @@
      	</action>     	
      	
      	
-     <!-- 投票操作部分 -->	
+     <!-- vote action -->	
      	<action name="queryvote" class="voteAction" method="queryvote">
      		<result name="success">/jsp/vote/queryvote.jsp</result>
      	</action>
@@ -49,8 +50,8 @@
      	</action>
      	
      	
-     <!-- 选项操作部分 -->
-      <!-- 老师学生功能部分 -->
+     <!-- item action -->
+      <!-- teacher student -->
      	<action name="queryItem" class="itemAction" method="queryItem">
      		<result name="success">/jsp/item/queryitem.jsp</result>
      	</action>
@@ -61,7 +62,7 @@
      		<result name="success">/jsp/item/queryitem.jsp</result>
      	</action>
      	
-     	<!-- 管理员功能部分 -->
+     	<!-- administrator -->
      	<action name="updateresult" class="itemAction" method="updateresult">
      		<result name="success">/jsp/item/updateresult.jsp</result>
      	</action>
