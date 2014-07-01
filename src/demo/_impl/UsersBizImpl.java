@@ -1,12 +1,9 @@
 package demo._impl;
 
 import java.util.List;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import demo.entity.Users;
-
 import demo.interfac.UsersBiz;
 import demo.interfac.UsersDao;
 
@@ -16,11 +13,13 @@ public class UsersBizImpl implements UsersBiz {
 	public void setUsersDao(UsersDao usersDao) {
 		this.usersDao = usersDao;
 	}
-	//²éÕÒËùÓÐÓÃ»§
+
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
 	public List<Users>findAll(){
 		return usersDao.findAll();
 	}
-	//ÑéÖ¤µÇÂ¼
+
+	//ï¿½ï¿½Ö¤ï¿½ï¿½Â¼
 	public Boolean login(String name, String pwd) {
 		Boolean flag=false;
 		List<Users>list=usersDao.findAll();
@@ -46,7 +45,8 @@ public class UsersBizImpl implements UsersBiz {
 	public void adduser(Users u) {
 		usersDao.adduser(u);
 	}
-	//²âÊÔ¿´¿´
+
+	//ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 	public static void main(String[] args) {
 		ApplicationContext app=new ClassPathXmlApplicationContext("applicationContext.xml");
 		UsersBizImpl ui=(UsersBizImpl) app.getBean("usersBiz");
