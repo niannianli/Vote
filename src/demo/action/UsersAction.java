@@ -1,9 +1,7 @@
 package demo.action;
 
 import java.util.List;
-
 import demo.interfac.UsersBiz;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import demo.entity.Users;
@@ -25,10 +23,12 @@ public class UsersAction extends ActionSupport {
 	public void setUsersBiz(UsersBiz usersBiz) {
 		this.usersBiz = usersBiz;
 	}
+
 	/**
-	 * ÀÏÊ¦ Ñ§Éú¹¦ÄÜ²¿·Ö
+	 * ï¿½ï¿½Ê¦ Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½Ü²ï¿½ï¿½ï¿½
 	 */
-	//µÇÂ¼
+	
+	//ï¿½ï¿½Â¼
 	public String login(){		
 		Boolean flag=usersBiz.login(u.getName(),u.getPwd());		
 		if(flag==true){	
@@ -39,7 +39,8 @@ public class UsersAction extends ActionSupport {
 			return INPUT;
 		}		
 	}
-	//ÕÒ»ØÃÜÂë
+
+	//ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½
 	public String getpwd(){
 		Users us=new Users();
 		us=usersBiz.findByName(u.getName()); 
@@ -47,12 +48,14 @@ public class UsersAction extends ActionSupport {
 		System.out.println(us.getPwd());
 		return SUCCESS;
 	}
-	//×¢Ïú
+
+	//×¢ï¿½ï¿½
 	public String loginout(){
 		ActionContext.getContext().getSession().clear();
 		return SUCCESS;
 	}
-	//ÐÞ¸ÄÃÜÂë
+
+	//ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½
 	public String mergepwd(){
 		Users us=(Users) ActionContext.getContext().getSession().get("user");
 		us.setPwd(u.getPwd());
@@ -61,15 +64,17 @@ public class UsersAction extends ActionSupport {
 	}
 	
 	/**
-	 * ¹ÜÀíÔ±¹¦ÄÜ²¿·Ö
+	 * ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½Ü²ï¿½ï¿½ï¿½
 	 */
-	//²é¿´ËùÓÐÓÃ»§
+	
+	//ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
 	public String queryuser(){
 		List<Users> list=usersBiz.findAll();
 		ActionContext.getContext().put("list",list);
 		return SUCCESS;
 	}
-	//Ìí¼ÓÓÃ»§
+	
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
 	public String adduser(){
 		Users us=new Users();
 		us.setUserid(usersBiz.getNewId());
