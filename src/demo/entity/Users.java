@@ -7,7 +7,6 @@ package demo.entity;
 public class Users implements java.io.Serializable {
 	
 	// Fields
-
 	private Long userid;
 	private String name;
 	private String pwd;
@@ -18,7 +17,7 @@ public class Users implements java.io.Serializable {
 	private String identity;
 
 	// Constructors
-
+	
 	/** default constructor */
 	public Users() {
 	}
@@ -42,7 +41,6 @@ public class Users implements java.io.Serializable {
 	}
 
 	// Property accessors
-
 	public Long getUserid() {
 		return this.userid;
 	}
