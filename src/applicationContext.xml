@@ -19,7 +19,7 @@
 		</property>
 	</bean>
 	
-	<!-- 用户操作 -->
+	<!-- users -->
 	<bean id="usersDao" class="demo._impl.UsersDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
@@ -30,7 +30,7 @@
 		<property name="usersBiz" ref="usersBiz"></property>
 	</bean>
 	
-	<!-- 投票操作 -->
+	<!-- vote -->
 	<bean id="voteDao" class="demo._impl.VoteDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
@@ -42,7 +42,7 @@
 	</bean>
 	
 	
-	<!-- 选项操作 -->
+	<!-- item -->
 	<bean id="itemDao" class="demo._impl.ItemDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
