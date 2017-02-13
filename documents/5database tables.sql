@@ -24,7 +24,7 @@ create table vote(
        classification varchar2(50),
        publishDate varchar2(50),
        finishDate varchar2(50),
-       avaliable number(10)    --1:有效 0:无效
+       avaliable number(10)    
 );
 insert into vote values(5001,1001,'biggest','who is biggest','commonsense','2012-12-11','2012-12-15',1);
 insert into vote values(5002,1001,'largest','who is largest','commonsense','2012-12-11','2012-12-15',1);

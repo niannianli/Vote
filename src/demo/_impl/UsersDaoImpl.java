@@ -7,7 +7,6 @@ import demo.interfac.UsersDao;
 
 public class UsersDaoImpl extends HibernateDaoSupport implements UsersDao{
 
-	//���������û�
 	@SuppressWarnings("unchecked")
 	public List<Users> findAll() {
 		List<Users>list=getHibernateTemplate().find("from Users");

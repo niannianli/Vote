@@ -6,23 +6,24 @@
 	<constant name="struts.i18n.encoding" value="gb18030" />
 	<constant name="struts.ui.theme" value="simple" />
 	<package name="default" namespace="/" extends="struts-default">
-	<!-- 账户操作部分 -->
-	  <!-- 老师学生功能部分 -->
+	
+	<!-- login -->
+	  <!-- professor/student -->
 		<action name="login" class="usersAction" method="login">
      		<result name="success">/jsp/main.jsp</result>
      		<result name="input">/jsp/login.jsp</result>
      	</action>
-     	<action name="loginout" class="usersAction" method="loginout">
+     	<action name="logout" class="usersAction" method="logout">
      		<result type="redirect">/jsp/login.jsp</result>     		
      	</action>
-     	<action name="getpwd" class="usersAction" method="getpwd">
+     	<action name="findpwd" class="usersAction" method="findpwd">
      		<result name="success">/jsp/user/findpwd.jsp</result>
      	</action>
-     	<action name="mergepwd" class="usersAction" method="mergepwd">
+     	<action name="changepwd" class="usersAction" method="changepwd">
      		<result name="success">/jsp/personinfo/info.jsp</result>
      	</action>
      	
-     	<!-- 管理员功能部分 -->
+     	<!-- administrator -->
      	<action name="queryuser" class="usersAction" method="queryuser">
      		<result name="success">/jsp/user/queryuser.jsp</result>
      	</action>
@@ -30,43 +31,42 @@
      		<result name="success">/jsp/user/queryuser.jsp</result>
      	</action>     	
      	
-     	
-     <!-- 投票操作部分 -->	
+     <!-- vote -->	
      	<action name="queryvote" class="voteAction" method="queryvote">
      		<result name="success">/jsp/vote/queryvote.jsp</result>
      	</action>
      	<action name="addvote" class="voteAction" method="addvote">
      		<result name="success">/jsp/vote/queryvote.jsp</result>
      	</action>
-     	<action name="mergevote" class="voteAction" method="mergevote">
-     		<result name="success">/jsp/vote/mergevote.jsp</result>
+     	<action name="changevote" class="voteAction" method="changevote">
+     		<result name="success">/jsp/vote/changevote.jsp</result>
      	</action>
-     	<action name="savemerge" class="voteAction" method="savemerge">
+     	<action name="savechange" class="voteAction" method="savechange">
      		<result name="success">/jsp/vote/queryvote.jsp</result>
      	</action>
      	<action name="deletevote" class="voteAction" method="deletevote">
      		<result name="success">/jsp/vote/queryvote.jsp</result>
-     	</action>
+     	</action>    	
      	
-     	
-     <!-- 选项操作部分 -->
-      <!-- 老师学生功能部分 -->
+     <!-- item -->
+      <!-- professor/student -->
      	<action name="queryItem" class="itemAction" method="queryItem">
      		<result name="success">/jsp/item/queryitem.jsp</result>
      	</action>
-     	<action name="mergeitem" class="itemAction" method="mergeitem">
-     		<result name="success">/jsp/item/mergeitem.jsp</result>
+     	<action name="changeitem" class="itemAction" method="changeitem">
+     		<result name="success">/jsp/item/changeitem.jsp</result>
      	</action>
      	<action name="updateitem" class="itemAction" method="updateitem">
      		<result name="success">/jsp/item/queryitem.jsp</result>
      	</action>
      	
-     	<!-- 管理员功能部分 -->
+     	<!-- administrator -->
      	<action name="updateresult" class="itemAction" method="updateresult">
      		<result name="success">/jsp/item/updateresult.jsp</result>
      	</action>
-     	<action name="mergeresult" class="itemAction" method="mergeresult">
+     	<action name="changeresult" class="itemAction" method="changeresult">
      		<result name="success">/jsp/item/queryitem.jsp</result>
      	</action>
+     	
 	</package>
 </struts>    

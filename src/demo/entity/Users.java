@@ -5,7 +5,7 @@ package demo.entity;
  */
 
 public class Users implements java.io.Serializable {
-	
+
 	// Fields
 	private Long userid;
 	private String name;
@@ -17,7 +17,6 @@ public class Users implements java.io.Serializable {
 	private String identity;
 
 	// Constructors
-	
 	/** default constructor */
 	public Users() {
 	}
@@ -28,11 +27,11 @@ public class Users implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Users(Long userid, String name, String pwd, String school, String major,
-			String grade, Long classno, String identity) {
+	public Users(Long userid, String name, String pwd, String school, String major, String grade, Long classno,
+			String identity) {
 		this.userid = userid;
 		this.name = name;
-		this.pwd=pwd;
+		this.pwd = pwd;
 		this.school = school;
 		this.major = major;
 		this.grade = grade;
@@ -56,7 +55,7 @@ public class Users implements java.io.Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-		
+
 	public String getPwd() {
 		return pwd;
 	}

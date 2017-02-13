@@ -5,13 +5,8 @@ package demo.entity;
  */
 
 public class Authority implements java.io.Serializable {
-	
-	// Fields
 
-	/**
-	 * 
-	 */
-	
+	// Fields
 	private Long voteid;
 	private String school;
 	private String major;
@@ -20,7 +15,6 @@ public class Authority implements java.io.Serializable {
 	private String identity;
 
 	// Constructors
-
 	/** default constructor */
 	public Authority() {
 	}
@@ -31,8 +25,7 @@ public class Authority implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Authority(Long voteid, String school, String major, String grade,
-			Long classno, String identity) {
+	public Authority(Long voteid, String school, String major, String grade, Long classno, String identity) {
 		this.voteid = voteid;
 		this.school = school;
 		this.major = major;
@@ -42,7 +35,6 @@ public class Authority implements java.io.Serializable {
 	}
 
 	// Property accessors
-
 	public Long getVoteid() {
 		return this.voteid;
 	}

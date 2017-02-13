@@ -1,0 +1,5 @@
+voting system; jsp website; use SSH framework: Struts2 Spring Hibernate Integration; oracle database;
+
+a complete voting website developed for software paradigm course; with all the documents;
+
+SSH usage.

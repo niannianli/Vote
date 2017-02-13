@@ -5,69 +5,68 @@
 	<constant name="struts.devMode" value="false" />
 	<constant name="struts.i18n.encoding" value="gb18030" />
 	<constant name="struts.ui.theme" value="simple" />
-	
+
 	<package name="default" namespace="/" extends="struts-default">
-	<!-- account operations -->
-	  <!-- teacher student actions -->
+
+		<!-- account operations -->
+		<!-- teacher student actions -->
 		<action name="login" class="usersAction" method="login">
-     		<result name="success">/jsp/main.jsp</result>
-     		<result name="input">/jsp/login.jsp</result>
-     	</action>
-     	<action name="loginout" class="usersAction" method="loginout">
-     		<result type="redirect">/jsp/login.jsp</result>     		
-     	</action>
-     	<action name="getpwd" class="usersAction" method="getpwd">
-     		<result name="success">/jsp/user/findpwd.jsp</result>
-     	</action>
-     	<action name="mergepwd" class="usersAction" method="mergepwd">
-     		<result name="success">/jsp/personinfo/info.jsp</result>
-     	</action>
-     	
-     	<!-- administrator action -->
-     	<action name="queryuser" class="usersAction" method="queryuser">
-     		<result name="success">/jsp/user/queryuser.jsp</result>
-     	</action>
-     	<action name="adduser" class="usersAction" method="adduser">
-     		<result name="success">/jsp/user/queryuser.jsp</result>
-     	</action>     	
-     	
-     	
-     <!-- vote action -->	
-     	<action name="queryvote" class="voteAction" method="queryvote">
-     		<result name="success">/jsp/vote/queryvote.jsp</result>
-     	</action>
-     	<action name="addvote" class="voteAction" method="addvote">
-     		<result name="success">/jsp/vote/queryvote.jsp</result>
-     	</action>
-     	<action name="mergevote" class="voteAction" method="mergevote">
-     		<result name="success">/jsp/vote/mergevote.jsp</result>
-     	</action>
-     	<action name="savemerge" class="voteAction" method="savemerge">
-     		<result name="success">/jsp/vote/queryvote.jsp</result>
-     	</action>
-     	<action name="deletevote" class="voteAction" method="deletevote">
-     		<result name="success">/jsp/vote/queryvote.jsp</result>
-     	</action>
-     	
-     	
-     <!-- item action -->
-      <!-- teacher student -->
-     	<action name="queryItem" class="itemAction" method="queryItem">
-     		<result name="success">/jsp/item/queryitem.jsp</result>
-     	</action>
-     	<action name="mergeitem" class="itemAction" method="mergeitem">
-     		<result name="success">/jsp/item/mergeitem.jsp</result>
-     	</action>
-     	<action name="updateitem" class="itemAction" method="updateitem">
-     		<result name="success">/jsp/item/queryitem.jsp</result>
-     	</action>
-     	
-     	<!-- administrator -->
-     	<action name="updateresult" class="itemAction" method="updateresult">
-     		<result name="success">/jsp/item/updateresult.jsp</result>
-     	</action>
-     	<action name="mergeresult" class="itemAction" method="mergeresult">
-     		<result name="success">/jsp/item/queryitem.jsp</result>
-     	</action>
+			<result name="success">/jsp/main.jsp</result>
+			<result name="input">/jsp/login.jsp</result>
+		</action>
+		<action name="loginout" class="usersAction" method="loginout">
+			<result type="redirect">/jsp/login.jsp</result>
+		</action>
+		<action name="getpwd" class="usersAction" method="getpwd">
+			<result name="success">/jsp/user/findpwd.jsp</result>
+		</action>
+		<action name="mergepwd" class="usersAction" method="mergepwd">
+			<result name="success">/jsp/personinfo/info.jsp</result>
+		</action>
+
+		<!-- administrator action -->
+		<action name="queryuser" class="usersAction" method="queryuser">
+			<result name="success">/jsp/user/queryuser.jsp</result>
+		</action>
+		<action name="adduser" class="usersAction" method="adduser">
+			<result name="success">/jsp/user/queryuser.jsp</result>
+		</action>
+
+		<!-- vote action -->
+		<action name="queryvote" class="voteAction" method="queryvote">
+			<result name="success">/jsp/vote/queryvote.jsp</result>
+		</action>
+		<action name="addvote" class="voteAction" method="addvote">
+			<result name="success">/jsp/vote/queryvote.jsp</result>
+		</action>
+		<action name="mergevote" class="voteAction" method="mergevote">
+			<result name="success">/jsp/vote/mergevote.jsp</result>
+		</action>
+		<action name="savemerge" class="voteAction" method="savemerge">
+			<result name="success">/jsp/vote/queryvote.jsp</result>
+		</action>
+		<action name="deletevote" class="voteAction" method="deletevote">
+			<result name="success">/jsp/vote/queryvote.jsp</result>
+		</action>
+
+		<!-- item action -->
+		<!-- teacher student -->
+		<action name="queryItem" class="itemAction" method="queryItem">
+			<result name="success">/jsp/item/queryitem.jsp</result>
+		</action>
+		<action name="mergeitem" class="itemAction" method="mergeitem">
+			<result name="success">/jsp/item/mergeitem.jsp</result>
+		</action>
+		<action name="updateitem" class="itemAction" method="updateitem">
+			<result name="success">/jsp/item/queryitem.jsp</result>
+		</action>
+
+		<!-- administrator -->
+		<action name="updateresult" class="itemAction" method="updateresult">
+			<result name="success">/jsp/item/updateresult.jsp</result>
+		</action>
+		<action name="mergeresult" class="itemAction" method="mergeresult">
+			<result name="success">/jsp/item/queryitem.jsp</result>
+		</action>
 	</package>
 </struts>    

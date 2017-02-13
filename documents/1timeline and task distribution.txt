@@ -1,11 +1,11 @@
 timeline: 
-according to professor's submit due.
+according to professor's submit due date.
+
 Abstract;
 Requirement;
 Design;(flow,database,web page)
 Deploy develop environment;
 Focus on programming and tesing.
-
 
 task distribution:
 Niannian Li: general users

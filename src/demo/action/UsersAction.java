@@ -8,9 +8,8 @@ import demo.entity.Users;
 
 public class UsersAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
-	
 	private UsersBiz usersBiz;
-	private Users u;	
+	private Users u;
 
 	public Users getU() {
 		return u;
@@ -24,59 +23,45 @@ public class UsersAction extends ActionSupport {
 		this.usersBiz = usersBiz;
 	}
 
-	/**
-	 * ��ʦ ѧ�����ܲ���
-	 */
-	
-	//��¼
-	public String login(){		
-		Boolean flag=usersBiz.login(u.getName(),u.getPwd());		
-		if(flag==true){	
-			Users user=usersBiz.findByName(u.getName());
-			ActionContext.getContext().getSession().put("user",user);
+	public String login() {
+		Boolean flag = usersBiz.login(u.getName(), u.getPwd());
+		if (flag == true) {
+			Users user = usersBiz.findByName(u.getName());
+			ActionContext.getContext().getSession().put("user", user);
 			return SUCCESS;
-		}else{
+		} else {
 			return INPUT;
-		}		
+		}
 	}
 
-	//�һ�����
-	public String getpwd(){
-		Users us=new Users();
-		us=usersBiz.findByName(u.getName()); 
-		ActionContext.getContext().put("us",us);
+	public String getpwd() {
+		Users us = new Users();
+		us = usersBiz.findByName(u.getName());
+		ActionContext.getContext().put("us", us);
 		System.out.println(us.getPwd());
 		return SUCCESS;
 	}
 
-	//ע��
-	public String loginout(){
+	public String loginout() {
 		ActionContext.getContext().getSession().clear();
 		return SUCCESS;
 	}
 
-	//�޸�����
-	public String mergepwd(){
-		Users us=(Users) ActionContext.getContext().getSession().get("user");
+	public String mergepwd() {
+		Users us = (Users) ActionContext.getContext().getSession().get("user");
 		us.setPwd(u.getPwd());
 		usersBiz.mergeUsers(us);
 		return SUCCESS;
 	}
-	
-	/**
-	 * ����Ա���ܲ���
-	 */
-	
-	//�鿴�����û�
-	public String queryuser(){
-		List<Users> list=usersBiz.findAll();
-		ActionContext.getContext().put("list",list);
+
+	public String queryuser() {
+		List<Users> list = usersBiz.findAll();
+		ActionContext.getContext().put("list", list);
 		return SUCCESS;
 	}
-	
-	//�����û�
-	public String adduser(){
-		Users us=new Users();
+
+	public String adduser() {
+		Users us = new Users();
 		us.setUserid(usersBiz.getNewId());
 		us.setClassno(u.getClassno());
 		us.setGrade(u.getGrade());
@@ -86,10 +71,10 @@ public class UsersAction extends ActionSupport {
 		us.setPwd(u.getPwd());
 		us.setSchool(u.getSchool());
 		usersBiz.adduser(us);
-		
-		List<Users> list=usersBiz.findAll();
-		ActionContext.getContext().put("list",list);
+
+		List<Users> list = usersBiz.findAll();
+		ActionContext.getContext().put("list", list);
 		return SUCCESS;
 	}
-	
+
 }

@@ -14,12 +14,10 @@ public class UsersBizImpl implements UsersBiz {
 		this.usersDao = usersDao;
 	}
 
-	//���������û�
 	public List<Users>findAll(){
 		return usersDao.findAll();
 	}
 
-	//��֤��¼
 	public Boolean login(String name, String pwd) {
 		Boolean flag=false;
 		List<Users>list=usersDao.findAll();
@@ -30,6 +28,7 @@ public class UsersBizImpl implements UsersBiz {
 		}
 		return flag;
 	}
+	
 	public Users findByName(String name) {
 		return usersDao.findByName(name);		
 	}
@@ -46,7 +45,6 @@ public class UsersBizImpl implements UsersBiz {
 		usersDao.adduser(u);
 	}
 
-	//���Կ���
 	public static void main(String[] args) {
 		ApplicationContext app=new ClassPathXmlApplicationContext("applicationContext.xml");
 		UsersBizImpl ui=(UsersBizImpl) app.getBean("usersBiz");

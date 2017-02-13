@@ -5,9 +5,8 @@ package demo.entity;
  */
 
 public class Item implements java.io.Serializable {
-	
-	// Fields
 
+	// Fields
 	private Long itemid;
 	private Long voteid;
 	private String label;
@@ -15,7 +14,6 @@ public class Item implements java.io.Serializable {
 	private Long count;
 
 	// Constructors
-
 	/** default constructor */
 	public Item() {
 	}
@@ -26,8 +24,7 @@ public class Item implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Item(Long itemid, Long voteid, String label, String content,
-			Long count) {
+	public Item(Long itemid, Long voteid, String label, String content, Long count) {
 		this.itemid = itemid;
 		this.voteid = voteid;
 		this.label = label;
@@ -36,7 +33,6 @@ public class Item implements java.io.Serializable {
 	}
 
 	// Property accessors
-
 	public Long getItemid() {
 		return this.itemid;
 	}

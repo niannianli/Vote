@@ -5,9 +5,8 @@ package demo.entity;
  */
 
 public class Vote implements java.io.Serializable {
-	
-	// Fields
 
+	// Fields
 	private Long voteid;
 	private Long userid;
 	private String title;
@@ -18,7 +17,6 @@ public class Vote implements java.io.Serializable {
 	private Long avaliable;
 
 	// Constructors
-
 	/** default constructor */
 	public Vote() {
 	}
@@ -29,9 +27,8 @@ public class Vote implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Vote(Long voteid, Long userid, String title, String question,
-			String classification, String publishdate, String finishdate,
-			Long avaliable) {
+	public Vote(Long voteid, Long userid, String title, String question, String classification, String publishdate,
+			String finishdate, Long avaliable) {
 		this.voteid = voteid;
 		this.userid = userid;
 		this.title = title;
@@ -43,7 +40,6 @@ public class Vote implements java.io.Serializable {
 	}
 
 	// Property accessors
-
 	public Long getVoteid() {
 		return this.voteid;
 	}

@@ -19,7 +19,7 @@
 		</property>
 	</bean>
 	
-	<!-- 用户操作 -->
+	<!-- user -->
 	<bean id="usersDao" class="demo._impl.UsersDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
@@ -30,7 +30,7 @@
 		<property name="usersBiz" ref="usersBiz"></property>
 	</bean>
 	
-	<!-- 投票操作 -->
+	<!-- vote -->
 	<bean id="voteDao" class="demo._impl.VoteDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
@@ -39,10 +39,9 @@
 	</bean>
 	<bean id="voteAction" class="demo.action.VoteAction">
 		<property name="voteBiz" ref="voteBiz"></property>
-	</bean>
+	</bean>	
 	
-	
-	<!-- 选项操作 -->
+	<!-- item -->
 	<bean id="itemDao" class="demo._impl.ItemDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
@@ -52,7 +51,6 @@
 	<bean id="itemAction" class="demo.action.ItemAction">
 		<property name="itemBiz" ref="itemBiz"></property>
 	</bean>
-	
 	
 	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
@@ -72,4 +70,5 @@
 		<aop:pointcut expression="execution(* BizImpl.*.*(..))" id="transactionPointcut"/>
 		<aop:advisor advice-ref="transactionAdvice" pointcut-ref="transactionPointcut"/>
 	</aop:config>
+	
 </beans>
